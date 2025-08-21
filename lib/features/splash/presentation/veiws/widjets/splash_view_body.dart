@@ -1,6 +1,10 @@
+import 'package:bookly_app/features/home/persentation/views/home_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../../constants.dart';
 import '../../../../../core/utilts/assets.dart';
 import 'Sliding_image.dart';
 import 'Sliding_text.dart';
@@ -20,8 +24,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   @override
   void initState() {
     initSlidingAnimation();
+    navigateToHome();
   }
-
   @override
   void dispose() {
     animationController.dispose();
@@ -41,6 +45,11 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
         ),
       ],
     );
+  }
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 3),(){
+      Get.to(() => const HomeView(),transition: Transition.fade,duration: KTranstionDuration);
+    });
   }
   void initSlidingAnimation() {
     animationController = AnimationController(
