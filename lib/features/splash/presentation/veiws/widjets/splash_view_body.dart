@@ -19,6 +19,30 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   @override
   void initState() {
+    initSlidingAnimation();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SlidingImage(slidingAnimationImage: slidingAnimationImage),
+        const SizedBox(height: 16,),
+        Center(
+          child: SlidingText(slidingAnimationText: slidingAnimationText),
+        ),
+      ],
+    );
+  }
+  void initSlidingAnimation() {
     animationController = AnimationController(
         vsync: this,
         duration: const Duration(milliseconds: 1400)
@@ -43,26 +67,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       setState(() {});
     });
   }
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SlidingImage(slidingAnimationImage: slidingAnimationImage),
-        const SizedBox(height: 16,),
-        Center(
-          child: SlidingText(slidingAnimationText: slidingAnimationText),
-        ),
-      ],
-    );
-  }
 }
 
 
