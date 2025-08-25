@@ -18,8 +18,8 @@ class SlidingText extends StatelessWidget {
           position: slidingAnimationText,
           child: Text(
             'Read Free Books',
-            style: GoogleFonts.lora(
-              fontSize: 24,
+            style: GoogleFonts.montserrat(
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
