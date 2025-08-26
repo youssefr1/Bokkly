@@ -19,7 +19,8 @@ class HomeViewBody extends StatelessWidget {
           CustomAppBar(),
           FeaturedBooksListView(),
           SizedBox(height: 50),
-          Text('Best Seller', style: Styles.textStyle18),
+          Text('Best Seller', style: Styles.textStyle20),
+          SizedBox(height: 20),
           BestSellerItem(),
         ],
       ),
@@ -37,20 +38,34 @@ class BestSellerItem extends StatelessWidget {
       child: Row(
         children: [
           AspectRatio(
-            aspectRatio: 2.7/4,
+            aspectRatio: 2.7 / 4,
             child: Container(
               width: 100,
-              height: MediaQuery.of(context).size.height * 0.26,
+              height:
+                  MediaQuery.of(context).size.height * 0.26,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(AssetsData.testImage))
+                borderRadius: BorderRadius.circular(16),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(AssetsData.testImage),
+                ),
               ),
-
             ),
           ),
-
+          Column(
+            children: [
+              Padding(
+                padding:  EdgeInsets.only(left: 20),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Text(
+                    'Harry Potter and the Goblet of Fire',maxLines: 2,overflow: TextOverflow.ellipsis,
+                    style: Styles.textStyle20,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
