@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utilts/assets.dart';
 import '../../../../../core/utilts/styles.dart';
+import 'BestSeller_rating.dart';
+import 'home_view_body.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -28,8 +30,8 @@ class BestSellerItem extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding:  EdgeInsets.only(left: 20),
+          SizedBox(width: 15,),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -47,6 +49,7 @@ class BestSellerItem extends StatelessWidget {
                   children: [
                     Text('19.99 €',style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold,),),
                     Spacer(),
+                    BookRating()
                   ],
                 )
               ],
