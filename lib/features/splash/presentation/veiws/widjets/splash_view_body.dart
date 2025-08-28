@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utilts/app_router.dart';
 import 'package:bookly_app/features/home/persentation/views/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -48,7 +49,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3),(){
-      GoRouter.of(context).push('/homeView');
+      GoRouter.of(context).push(appRouter.KHomeView);
     });
   }
   void initSlidingAnimation() {
