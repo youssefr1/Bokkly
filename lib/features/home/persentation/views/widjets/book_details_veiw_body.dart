@@ -3,6 +3,7 @@ import 'package:bookly_app/features/home/persentation/views/widjets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'BestSeller_rating.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsVeiwBody extends StatelessWidget {
@@ -14,6 +15,7 @@ class BookDetailsVeiwBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Column(
+
         children: [
           CustomBookDetailsAppBar(),
           Padding(
@@ -22,8 +24,10 @@ class BookDetailsVeiwBody extends StatelessWidget {
           ),
           SizedBox(height: 34,),
           Text('The Jungle Book',style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
+          SizedBox(height: 4,),
+          Text('Rudyard kipling',style: Styles.textStyle18.copyWith(color: Colors.grey),),
           SizedBox(height: 6,),
-          Text('Rudyard kipling',style: Styles.textStyle18.copyWith(color: Colors.grey.shade700),)
+          BookRating(mainAxisAlignment: MainAxisAlignment.center,)
           ]
       ),
     );
