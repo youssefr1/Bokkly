@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utilts/app_router.dart';
 import '../../../../../core/utilts/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -18,7 +20,9 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset(AssetsData.logo,width: 80,height: 30,),
           Spacer(),
-          IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.magnifyingGlass,size: 25,))
+          IconButton(onPressed: (){
+            GoRouter.of(context).push(appRouter.KSearchView);
+          }, icon: Icon(FontAwesomeIcons.magnifyingGlass,size: 22,))
         ],
       ),
     );
