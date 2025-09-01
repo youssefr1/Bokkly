@@ -7,7 +7,7 @@ import 'BestSellerItem.dart';
 import 'best_seller_list_view.dart';
 import 'custom_appBar.dart';
 import 'featured_list_view.dart';
-import 'featured_list_view_item.dart';
+import 'custom_book_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
