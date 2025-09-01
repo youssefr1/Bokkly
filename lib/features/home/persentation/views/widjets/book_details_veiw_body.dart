@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utilts/styles.dart';
 import 'package:bookly_app/core/widjets/custom_button.dart';
 import 'package:bookly_app/features/home/persentation/views/widjets/custom_book_item.dart';
+import 'package:bookly_app/features/home/persentation/views/widjets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -43,12 +44,25 @@ class BookDetailsVeiwBody extends StatelessWidget {
           BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          SizedBox(height: 37,),
+          SizedBox(height: 37),
           BooksAction(),
+          SizedBox(height: 40),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                'You can also like ',
+                style: Styles.textStyle16.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          SimilarBookListView()
+
         ],
       ),
     );
   }
 }
-
-
