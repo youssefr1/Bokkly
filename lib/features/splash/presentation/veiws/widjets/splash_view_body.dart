@@ -17,7 +17,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimationText;
   late Animation<Offset> slidingAnimationImage;
@@ -27,6 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     initSlidingAnimation();
     navigateToHome();
   }
+
   @override
   void dispose() {
     animationController.dispose();
@@ -40,34 +42,34 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SlidingImage(slidingAnimationImage: slidingAnimationImage),
-        const SizedBox(height: 16,),
-        Center(
-          child: SlidingText(slidingAnimationText: slidingAnimationText),
-        ),
+        const SizedBox(height: 16),
+        Center(child: SlidingText(slidingAnimationText: slidingAnimationText)),
       ],
     );
   }
+
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3),(){
+    Future.delayed(const Duration(seconds: 3), () {
       GoRouter.of(context).push(appRouter.KHomeView);
     });
   }
+
   void initSlidingAnimation() {
     animationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: 1400)
+      vsync: this,
+      duration: const Duration(milliseconds: 1400),
     );
     animationController.forward();
     super.initState();
 
     slidingAnimationText = Tween<Offset>(
-        begin: const Offset(0, 18),
-        end: Offset.zero
+      begin: const Offset(0, 18),
+      end: Offset.zero,
     ).animate(animationController);
 
     slidingAnimationImage = Tween<Offset>(
-        begin: const Offset(0, -12),
-        end: Offset.zero
+      begin: const Offset(0, -12),
+      end: Offset.zero,
     ).animate(animationController);
 
     slidingAnimationText.addListener(() {
@@ -77,8 +79,4 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       setState(() {});
     });
   }
-
 }
-
-
-

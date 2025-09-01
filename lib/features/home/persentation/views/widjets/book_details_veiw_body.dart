@@ -21,9 +21,7 @@ class BookDetailsVeiwBody extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 12,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Column(
               children: [
                 CustomBookDetailsAppBar(),
@@ -39,7 +37,3 @@ class BookDetailsVeiwBody extends StatelessWidget {
     );
   }
 }
-
-
-
-

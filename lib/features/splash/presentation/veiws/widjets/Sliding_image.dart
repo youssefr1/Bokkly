@@ -3,10 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../../../../../core/utilts/assets.dart';
 
 class SlidingImage extends StatelessWidget {
-  const SlidingImage({
-    super.key,
-    required this.slidingAnimationImage,
-  });
+  const SlidingImage({super.key, required this.slidingAnimationImage});
 
   final Animation<Offset> slidingAnimationImage;
 
@@ -18,7 +15,8 @@ class SlidingImage extends StatelessWidget {
         return SlideTransition(
           position: slidingAnimationImage,
           child: Image.asset(AssetsData.logo),
-        );},
+        );
+      },
     );
   }
 }

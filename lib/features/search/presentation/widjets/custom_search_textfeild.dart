@@ -11,8 +11,15 @@ class CustomSearchTextFeild extends StatelessWidget {
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
-        hintStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white),
-        suffixIcon: IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.magnifyingGlass)),
+        hintStyle: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: Icon(FontAwesomeIcons.magnifyingGlass),
+        ),
       ),
     );
   }

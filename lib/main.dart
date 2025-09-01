@@ -8,25 +8,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'features/splash/presentation/veiws/splash_view.dart';
 
 void main() {
-  runApp( const Bookly());
+  runApp(const Bookly());
 }
 
 class Bookly extends StatelessWidget {
   const Bookly({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: appRouter.router,
       debugShowCheckedModeBanner: false,
-      theme:ThemeData.dark().copyWith(
+      theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: KPrimaryColor,
-          textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
-
     );
   }
 }
-
-
-

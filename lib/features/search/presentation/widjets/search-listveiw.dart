@@ -7,14 +7,16 @@ class SearchResultListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(
+    return ListView.builder(
       shrinkWrap: true,
-      padding:EdgeInsets.zero,
-      itemBuilder:(context,index){
+      padding: EdgeInsets.zero,
+      itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: const BookListViewItem(),
         );
-      },itemCount: 10,);
+      },
+      itemCount: 10,
+    );
   }
 }

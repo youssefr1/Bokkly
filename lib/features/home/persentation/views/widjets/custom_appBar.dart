@@ -7,22 +7,22 @@ import '../../../../../core/utilts/app_router.dart';
 import '../../../../../core/utilts/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    super.key,
-  });
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only( top: 38,bottom: 20),
+      padding: const EdgeInsets.only(top: 38, bottom: 20),
       child: Row(
-
         children: [
-          Image.asset(AssetsData.logo,width: 80,height: 30,),
+          Image.asset(AssetsData.logo, width: 80, height: 30),
           Spacer(),
-          IconButton(onPressed: (){
-            GoRouter.of(context).push(appRouter.KSearchView);
-          }, icon: Icon(FontAwesomeIcons.magnifyingGlass,size: 22,))
+          IconButton(
+            onPressed: () {
+              GoRouter.of(context).push(appRouter.KSearchView);
+            },
+            icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 22),
+          ),
         ],
       ),
     );

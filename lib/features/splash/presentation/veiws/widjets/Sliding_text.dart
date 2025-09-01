@@ -2,10 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SlidingText extends StatelessWidget {
-  const SlidingText({
-    super.key,
-    required this.slidingAnimationText,
-  });
+  const SlidingText({super.key, required this.slidingAnimationText});
 
   final Animation<Offset> slidingAnimationText;
 
@@ -23,7 +20,8 @@ class SlidingText extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-        );},
+        );
+      },
     );
   }
 }
