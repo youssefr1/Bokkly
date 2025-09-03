@@ -33,7 +33,8 @@ class BookListViewItem extends StatelessWidget {
           children: [
             CustomBookImage(
               image:
-                  bookModel.volumeInfo.imageLinks.thumbnail,
+                  bookModel.volumeInfo.imageLinks?.thumbnail ??  'https://covers.openlibrary.org/b/id/10909258-L.jpg'
+                   ,
             ),
             SizedBox(width: 15),
             Expanded(
@@ -46,7 +47,7 @@ class BookListViewItem extends StatelessWidget {
                         MediaQuery.of(context).size.width *
                         0.5,
                     child: Text(
-                      bookModel.volumeInfo.title!,
+                      bookModel.volumeInfo.title??'No Title',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20.copyWith(
@@ -56,7 +57,9 @@ class BookListViewItem extends StatelessWidget {
                   ),
                   SizedBox(height: 3),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    (bookModel.volumeInfo.authors?.isNotEmpty ?? false)
+                        ? bookModel.volumeInfo.authors![0]
+                        : 'Unknown Author',
                     style: Styles.textStyle14.copyWith(
                       color: Colors.grey,
                     ),
@@ -76,7 +79,7 @@ class BookListViewItem extends StatelessWidget {
                             MainAxisAlignment.start,
                         rating: bookModel
                             .volumeInfo
-                            .averageRating ?? 0,
+                            .averageRating ??0 ,
                         count: bookModel
                             .volumeInfo
                             .ratingsCount ?? 0,
