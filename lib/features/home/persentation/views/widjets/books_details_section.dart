@@ -17,7 +17,7 @@ class BookDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.22),
           child: CustomBookImage(
-                  image: '',          ),
+                  image: 'https://covers.openlibrary.org/b/id/10909258-L.jpg',          ),
         ),
         SizedBox(height: 34),
         Text(
@@ -32,7 +32,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 6),
-        // BookRating(mainAxisAlignment: MainAxisAlignment.center),
+         BookRating(mainAxisAlignment: MainAxisAlignment.center,count: 2502,rating: 2,),
         SizedBox(height: 37),
         BooksAction(),
       ],
