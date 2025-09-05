@@ -3,7 +3,9 @@ import 'package:bookly_app/core/widjets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/home/persentation/view_models/featured%20books/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utilts/app_router.dart';
 import 'custom_book_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -23,7 +25,12 @@ class FeaturedBooksListView extends StatelessWidget {
 
                 return Padding(
                   padding: const EdgeInsets.only(right: 10, bottom: 10),
-                  child: CustomBookImage(image: state.books[index].volumeInfo.imageLinks?.thumbnail??'https://covers.openlibrary.org/b/id/10909258-L.jpg'),
+                  child: GestureDetector(
+                      onTap:(){
+                        GoRouter.of(context,).push(appRouter.KBookDetailsView,extra:state.books[index] );
+
+                      },
+                      child: CustomBookImage(image: state.books[index].volumeInfo.imageLinks?.thumbnail??'https://covers.openlibrary.org/b/id/10909258-L.jpg')),
                 );
               },
               itemCount:state.books.length ,

@@ -19,6 +19,6 @@ class _BookDetailsViewState extends State<BookDetailsView> {
     super.initState();
   }
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: BookDetailsVeiwBody()));
+    return Scaffold(body: SafeArea(child: BookDetailsVeiwBody(bookModel:widget.bookModel,)));
   }
 }
